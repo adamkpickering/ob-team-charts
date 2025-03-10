@@ -3,7 +3,7 @@
 metadata:
   name: {{ .Release.Name }}-k3s
 spec:
-  {{- include "logging-operator.individualLoggingRef" $individualValues | nindent 2 }}
+  loggingRef: {{ .Release.Name }}-k3s
   fluentd:
     {{- include "logging-operator.individualFluentd" $individualValues | nindent 4 }}
 {{- end -}}
